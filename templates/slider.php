@@ -27,7 +27,7 @@
         }
 
         .hero-section {
-            background-image: url(images/slidersection-bg-img.png);
+            background-image: url('<?php echo get_template_directory_uri();?>/images/slidersection-bg-img.png');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
