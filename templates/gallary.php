@@ -52,8 +52,8 @@
             }
         }
     </style>
-    <div class="image-gallary">
-        <section class="campus-tour">
+    <div class="image-gallary" >
+        <section class="campus-tour" style="background: url('<?php echo get_template_directory_uri(); ?>/images/bbgg.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
             <div class="container">
                 <h2 class="section-title">University Highlights</h2>
                 <div class="row">

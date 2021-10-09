@@ -8,6 +8,7 @@
             padding-bottom: 60px;
             padding-top: 120px;
             position: relative;
+            
         }
 
         .NoticeAndFacultySection-container {
@@ -19,7 +20,7 @@
         }
 
         .NoticeAndFacultyLight {
-            background-color: #ecf0f5;
+            /* background-color: #ecf0f5; */
         }
 
         .TitleCOlor {
@@ -459,7 +460,7 @@
             }
         }
     </style>
-    <section class="NoticeAndFacultySection NoticeAndFacultyLight">
+    <section class="NoticeAndFacultySection NoticeAndFacultyLight" style="background: url('<?php echo get_template_directory_uri(); ?>/images/bbgg.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
         <div class="container NoticeAndFacultySection-container">
             <div class="row">
                 <div class="col-xs-12 col-md-7 facultyCard">
