@@ -149,13 +149,14 @@
             position: relative;
             display: block;
             margin: 0px;
+            width:45.5%;
         }
 
         .main-footer .footer-top .subscribe-widget .widget-content .subscribe-form .form-group input[type='email'] {
             position: relative;
             display: block;
             width: 100%;
-            height: 70px;
+            height: 50px;
             background: #fff;
             border: 3px solid #fff;
             padding: 15px 20px;
@@ -176,6 +177,7 @@
         }
 
         .main-footer .footer-top .subscribe-widget .widget-content .subscribe-form .form-group .theme-btn:hover {
+            border-radius:5px !important;
             color: #ff7162 !important;
         }
 
@@ -184,7 +186,7 @@
             display: inline-block;
             font-size: 15px;
             font-family: 'M PLUS Rounded 1c', sans-serif;
-            padding: 17px 40px;
+            padding: 12px 40px;
             background-color: #ff7162;
             line-height: 26px;
             color: #ffffff !important;
@@ -194,6 +196,8 @@
             text-align: center;
             transition: all 500ms ease;
             z-index: 1;
+            border-radius:5px;
+
         }
 
         .main-footer .footer-top .subscribe-widget .widget-content .subscribe-form .form-group .theme-btn:before {
@@ -429,6 +433,14 @@
             height: 100%;
             object-fit: cover;
         }
+        .footerIMG:hover{
+            transform: rotateY(360deg);
+        }
+        .footerIMG{
+            transition: all 1.5s ease;
+            float: left;
+            cursor: pointer;
+        }
     </style>
     <footer class="main-footer" style="margin-top: 40px;">
         <div class="footer-top">
@@ -444,7 +456,25 @@
             <div class="container">
                 <div class="footer-links-area">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                    <div class="col-lg-12 col-md-6 col-sm-12 footer-column">
+                            <div class="subscribe-widget footer-widget">
+                                <div class="widget-content">
+                                    <div class="subscribe-inner">
+                                        <form action="#" method="post" class="subscribe-form" style="display:flex; flex-direction:row; justify-content: end;">
+                                            <div class="form-group" style="    margin-right: 37px;">
+                                                <input type="email" name="email" placeholder="Search  here" required="">
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="theme-btn">Search</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="about-widget footer-widget">
                                 <h3 class="widget-title">About Baust</h3>
                                 <div class="widget-content">
@@ -452,14 +482,16 @@
                                         <p>Bangladesh Army University of Science & Technology (BAUST), the pioneer
                                             technical institutes of Armed Forces, started its journey from 15th February
                                             2015.</p>
-                                        <p> It was the visionary leadership of the honorable prime minister of People’s
-                                            Republic of Bangladesh Sheikh Hasina to establish a technical institute of
-                                            Armed Forces.</p>
+                                    </div>
+                                    <div class="footerIMG">
+                                        <a href="<?php echo home_url(); ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?> /images/logo (1).png" alt="">
+                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="link-widget footer-widget">
                                 <h3 class="widget-title">Resources and Links</h3>
                                 <div class="widget-content">
@@ -473,7 +505,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="contact-widget footer-widget">
                                 <h3 class="widget-title">Contact Us</h3>
                                 <div class="widget-content">
@@ -489,20 +521,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="subscribe-widget footer-widget">
-                                <div class="widget-content">
-                                    <div class="subscribe-inner">
-                                        <form action="#" method="post" class="subscribe-form">
-                                            <div class="form-group">
-                                                <input type="email" name="email" placeholder="Search  here" required="">
-                                                <button type="submit" class="theme-btn">Search</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
