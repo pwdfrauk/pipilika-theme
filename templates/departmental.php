@@ -20,7 +20,7 @@
     .msg-single-page {
       margin: 60px 0px;
       padding: 60px 0px 0px 0px;
-      background-color: #ecf0f5;
+  /*    background-color: #ecf0f5;*/
     }
     .singlePageHead {
       background-image: url(NewFaculty/NoticeFacultyImg.jpg);
@@ -133,6 +133,7 @@
     .departmental-card {
       background: transparent !important;
       padding-right: 0px;
+      padding-left:0px;
     }
 
    
@@ -412,7 +413,6 @@
     }
 
     .departmental-profile {
-      height: 440px;
       padding-right: 0px;
       padding-left: 0px;
     }
@@ -428,7 +428,7 @@
       font-family: 'Poppins', sans-serif;
       text-align: center;
       border-radius: 0 0 150px 150px;
-      box-shadow: 0 12px 7px -7px rgb(0 0 0 / 20%);
+      box-shadow: 0px 0px 7px -7px rgb(0 0 0 / 20%);
     }
 
     #TeacherProfile .serviceBox .service-content {
@@ -450,7 +450,7 @@
       line-height: 68px;
       height: 150px;
       width: 247px;
-      margin: 0 auto 10px;
+      margin:28px auto;
       border-radius: 0 0 50px 50px;
     }
 
@@ -682,16 +682,27 @@
               <div class="card departmental-card">
                 <div id="TeacherProfile" class="TeacherProfile-section-padding">
                   <div class="col-xs-12 atf-main-TeacherProfile text-center departmental-profile">
-                    <div class="serviceBox wow fadeIn" style="visibility: visible;">
+                    <div class="serviceBox" style="visibility: visible;">
                       <div class="service-content">
+                        <?php
+                    $the_query = new WP_Query(
+                        array( 
+                            'category_name' => 'message',
+                            'post_per_page'=> 1,
+                        )
+                    );
+                    if ( $the_query->have_posts() ):
+                        while ( $the_query->have_posts() ):
+                            $the_query->the_post();
+                            ?>
+
                         <h2 class="message-title">Message from Head</h2>
                         <div class="service-icon">
-                          <div class="messge-profile-img" style="background: url('images/t3.jpeg');min-height:155px;"></div>
+                          <div class="messge-profile-img" style="background: url('<?php the_post_thumbnail_url(get_the_ID(), 'full'); ?>');min-height:155px;"></div>
                         </div>
                         <div class="serviece-info">
                           <div style="min-height: 108px;">
-                            <h3 style="overflow: hidden;min-height:21px;max-height:32px;" class="title">Professor Dr.
-                              Enamul Basher</h3>
+                            <h3 style="overflow: hidden;min-height:21px;max-height:32px;" class="title"><?php echo get_the_title();?></h3>
                             <div style="overflow: hidden;min-height:30px;max-height:46px;">
                               <h6 class="designation-title">Professor & Dean, Faculty of Business Studies</h6>
                             </div>
@@ -708,6 +719,13 @@
                             </svg>
                           </div>
                         </div>
+
+                    <?php 
+                        endwhile;
+                    endif;
+                    wp_reset_postdata();
+                                ?>
+
                       </div>
                     </div>
                   </div>
@@ -787,8 +805,8 @@
         }
 
         .serviceBox .service-icon .messge-profile-img {
-          width: 150px !important;
-          height: 150px !important;
+          width: 170px !important;
+          height: 170px !important;
           margin: auto;
           border-radius: 26px;
           border: 4px solid #6861BC;
@@ -1390,9 +1408,9 @@
           position: relative;
         }
       </style>
-  <div class="msg-single-page">
+  <div class="msg-single-page" style="background:url('<?php echo get_template_directory_uri();?>../images/bbgg.jpg'); background-repeat: no-repeat;background-size: cover;background-position: center;">
     <div class="container">
-      <h2 class="section-title">FACULTY OF BUSINESS STUDIES (BS)</h2>
+      <h2 class="section-title headerTitles">FACULTY OF BUSINESS STUDIES (BS)</h2>
       <!-- profile card slider  -->
     <!-- slider Section  owl carousel -->
       <div class="owlAndNoticeSection">
