@@ -248,7 +248,10 @@
       background: #6861BC;
       color: #ffffff;
     }
-
+    .departmental-contaienr-area {
+      display: flex;
+      align-items:center;
+    }
     /***  video card ***/
 
     .video-thumbnail-card {
@@ -495,8 +498,8 @@
     }
 
     #TeacherProfile .serviceBox .service-icon .profile-img {
-      height: 155px;
-      width: 155px;
+      height: 175px;
+      width: 160px;
       border-radius: 26px;
       border: 4px solid #6861BC;
       margin: auto;
@@ -514,7 +517,6 @@
     }
 
     .serviece-info {
-      height: 172px;
       padding: 0px 35px;
     }
 
@@ -762,11 +764,7 @@
       </div>
     </div>
   </div>
-  <div class="msg-single-page">
-    <div class="container">
-      <h2 class="section-title">FACULTY OF BUSINESS STUDIES (BS)</h2>
-      <!-- profile card slider  -->
-      <style>
+  <style>
         /* departmenteal cercle card */
         /* departmenteal cercle card */
         .serviceBox {
@@ -812,7 +810,7 @@
           background: white;
           border-radius: 15px 15px 150px 150px;
           box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
-          margin: 0px 15px 15px 15px;
+          margin: 0px 8px 8px 8px;
           border-top: 15px solid #6861BC;
           margin-top: 42px;
         }
@@ -828,7 +826,7 @@
           line-height: 68px;
           height: 150px;
           width: 247px;
-          margin: -56px auto 25px;
+          margin: -38px auto 25px;
           border-radius: 0 0 50px 50px;
         }
 
@@ -1258,9 +1256,66 @@
         width: 100%;
       }
         .notice_card_area {
-            height: 640px;
+            height: 595px;
             overflow: auto;
         }
+        /* start  pipilika slider */
+          .row {
+          
+            
+          }
+          .card {
+          margin: 10px 0;
+          }
+          .card-content {
+          background: red;
+          padding: 10px;
+          text-align: center;
+          font-size: 36px;
+          height: 350px;
+          }
+          ::-webkit-scrollbar {
+            border-right: 50%;
+          }
+          .pipilika-carousel {
+          position: relative;
+          }
+          .pipilika-carousel .slick-prev {
+            position: absolute;
+            left: 0;
+            bottom:20px;
+            margin-top: 20px;
+            padding:0px 6px;
+          }
+          .pipilika-carousel .slick-next {
+             position: absolute;
+            right: 0;
+            bottom:20px;
+            margin-top: 20px;
+            padding:0px 6px;
+          }
+           .pipilika-carousel .slick-dots {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+           }
+           .pipilika-carousel .slick-dots li {
+              margin-right: 8px;
+           }
+           .pipilika-carousel .slick-dots li button {
+            padding:0px 6px;
+           }
+           .pipilika-carousel .slick-dots li.slick-active button {
+
+           } 
+           .pipilika-carousel .slick-dots li:last-child {
+            margin-right: 0px;
+           }
+           .pipilika-carousel {
+            margin-top: -30px;
+           }
+      /* end pipilika slider */
       @media only screen and (max-width:768px) {
           .notice-title-area  {
               display: block;
@@ -1289,6 +1344,7 @@
         padding-bottom: 25px;
         }
       }
+
        @media only screen and (max-width: 567px) {
         .NoticeAndFacultySection{
             padding:30px 0px;
@@ -1352,20 +1408,22 @@
           position: relative;
         }
       </style>
-
-      <!-- slider Section  owl carousel -->
-      <div class="container owlAndNoticeSection">
+  <div class="msg-single-page">
+    <div class="container">
+      <h2 class="section-title">FACULTY OF BUSINESS STUDIES (BS)</h2>
+      <!-- profile card slider  -->
+    <!-- slider Section  owl carousel -->
+      <div class="owlAndNoticeSection">
+        <div class="row">
         <div class="col-md-7">
           <div class="our-client-section">
             <div class="profileTitleDiv">
-              <h3 class="TitleCOlor ">Profile Card Slider</h2>
+              <h3 class="TitleCOlor ">Profile Card Slider</h3>
               <hr class="Profiledivider">
             </div>
-              
-            <div class="profilecard owl-carousel owl-theme">
-            	<!-- teacher list 1  -->
-            <?php
-            	$the_query = new WP_Query(
+            <div class="row pipilika-carousel">
+                 <?php
+              $the_query = new WP_Query(
                         array( 
                             'category_name' => 'Teacher List',
                             'order'          => 'ASC',
@@ -1383,15 +1441,14 @@
                     </div>
                   </div>
                   <div class="serviece-info">
-                    <div style="min-height: 108px;">
-                      <div style="min-height:20px;max-height: 31px;overflow: hidden;">
+                    <div style="min-height: 64px;">
+                      <div style="max-height:16px;min-height: 14px;overflow: hidden;">
                         <h3 class="title"><?php echo get_the_title(); ?></h3>
                       </div>
                       <div style="overflow: hidden;max-height:46px;min-height:30px;">
-                        <h6 class="designation-title"></h6>
+                        <h6 class="designation-title">Designation-title</h6>
                       </div>
                       <div class="profile-contact-info" style="max-height: 35px;overflow: hidden;">
-                        <span style="display:block;"><i class="fa fa-phone" aria-hidden="true"></i> 01727442468</span>
                         <span style="display:block;"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                           dean_ece@baust.edu.bd</span>
                       </div>
@@ -1409,72 +1466,17 @@
                   </div>
                 </div>
               </div>
-		<?php 
-				endwhile;
-                    endif;
-                    wp_reset_postdata(); ?>
-
-              <!-- end service box -->
-           </div>
-      <!-- teacher list slider 1  -->
-      <!-- teacher list slider two  -->
-           <div class="profilecard2 owl-carousel owl-theme">
-              <!-- start service box -->
-            <?php
-            	$the_query = new WP_Query(
-                        array( 
-                            'category_name' => 'Teacher List',
-                            'order'          => 'DSC',
-                        )
-                    );
-                    if ( $the_query->have_posts() ):
-                        while ( $the_query->have_posts() ):
-                            $the_query->the_post();  ?>
-                <div class="serviceBox " style="visibility: visible;">
-                <div class="service-content">
-                  <!-- <h2 class="message-title">MESSAGE FROM VC</h2> -->
-                  <div class="service-icon">
-                    <div class="profile-img"
-                      style="background: url(<?php the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>);">
-                    </div>
-                  </div>
-                  <div class="serviece-info">
-                    <div style="min-height: 108px;">
-                      <div style="min-height:20px;max-height: 31px;overflow: hidden;">
-                        <h3 class="title"><?php echo get_the_title(); ?></h3>
-                      </div>
-                      <div style="overflow: hidden;max-height:46px;min-height:30px;">
-                        <h6 class="designation-title"></h6>
-                      </div>
-                      <div class="profile-contact-info" style="max-height: 35px;overflow: hidden;">
-                        <span style="display:block;"><i class="fa fa-phone" aria-hidden="true"></i> 01727442468</span>
-                        <span style="display:block;"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                          dean_ece@baust.edu.bd</span>
-                      </div>
-                    </div>
-                    <div class="svg-wrapper">
-                      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                          <!-- <a href=""><span class="spot"></span> <i class="fa fa-eye"></i> <b>Read More </b></a> -->
-                          <a style="position:bottom" href="#" class="read-more service-box-read-more-button"><span class="spot"></span> <i class="fa fa-eye"></i> View Profile</a>
-                        </div>
-                      </svg>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-		<?php 
-				endwhile;
+            <?php 
+                endwhile;
                     endif;
                     wp_reset_postdata(); ?>
             </div>
-            <!--end  teacher list slider two  -->
+      <!-- teacher list slider 1  -->
+
             <!--  end profile teacher list  -->
           </div>
         </div>
-        <div class="col-md-5 notice-container">
+      <div class="col-md-5 notice-container">
           <div class="row notice-title-area ">
             <div class="NoticeTitles col-xs-6 col-sm-6">
               <h3 class="TitleCOlor">Notice</h3>
@@ -1485,7 +1487,7 @@
               <hr class="semoreDivider">
             </div>
           </div>
-          <div class="notice_card_area">
+          <div class="notice_card_area col-md-12">
           	<?php
                     $the_query = new WP_Query(
                         array( 
@@ -1525,7 +1527,7 @@
                     wp_reset_postdata();  ?>
              </div>
         </div>
-
+         </div>
         <div class="departmentalnotice-overly">
           <img src="<?php echo get_template_directory_uri();?>/images/back.png">
       </div>
@@ -1585,7 +1587,7 @@
   </style>
   <div class="container dep-why-choice-us-sec">
      <div class="row departmental-contaienr-area">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-8 departmental-leftside ">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 departmental-leftside ">
           <div class="articleCard">
             <div class="upperDiv">
               <div class="WhyChooseUsTitle" id="" style="height: auto; padding-left: 20px;">
@@ -1605,7 +1607,7 @@
               <p style="line-height: 29px;font-size: 16px; font-style: normal; color: rgb(17, 17, 17);">Lorem ipsum
                 dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua. Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</span></p>
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
             </div>
             <div style="margin-top:25px;">
               <div class="lp-element lp-pom-text nlh" id="lp-pom-text-700"
@@ -1633,7 +1635,7 @@
             
           </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 departmental-rightside derpartmental-video-area">
+        <div class="col-xs-12 col-sm-12 col-md-6 departmental-rightside derpartmental-video-area">
           <div class="card video-thumbnail-card">
             <div class="video-thumbnail-img"
               style="background: url('<?php echo get_template_directory_uri();?>/images/bookmage.jpg');background-size:cover;background-position:center; background-repeat:no-repeat;">

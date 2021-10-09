@@ -530,7 +530,8 @@
     <!-- footer End -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     <script src="<?php echo get_template_directory_uri();?>/bin/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+    
 
     <!-- footer amimation   -->
      <script>
@@ -584,45 +585,27 @@
 
   <script>
     $(document).ready(function() {
-    $('.profilecard').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: false,
-      autoplay: false,
-      autoplayTimeout: 2000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1000: {
-          items: 2
-        }
-      }
-    });
-
-    $('.profilecard2').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: false,
-      autoplay: false,
-      autoplayTimeout: 2000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1000: {
-          items: 2
-        }
-      }
-    });
+        var slickopts = {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+         autoplay: true,
+        dots: true,
+        rows: 2, // Removes the linear order. Would expect card 5 to be on next row, not stacked in groups.
+        
+        responsive: [
+          { breakpoint: 992,
+            settings: {
+              slidesToShow: 1
+            }
+          },
+          { breakpoint: 776,
+            settings: {
+              slidesToShow: 1,
+              rows: 1 // This doesn't appear to work in responsive (Mac/Chrome)
+            }
+          }]
+      };
+      $('.pipilika-carousel').slick(slickopts);
     });
    </script>
    
