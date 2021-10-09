@@ -376,6 +376,27 @@
             height: 640px;
             overflow: auto;
         }
+        /* width */
+        .notice_card_area::-webkit-scrollbar {
+          width: 8px !important;
+        }
+        /* Track */
+        .notice_card_area::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px grey !important; 
+          border-radius: 10px !important;
+        }
+         
+        /* Handle */
+        .notice_card_area::-webkit-scrollbar-thumb {
+          background: #032159;
+          border-radius: 10px !important;
+        }
+
+        /* Handle on hover */
+        .notice_card_area::-webkit-scrollbar-thumb:hover {
+          background: #031d4e !important; 
+        }
+        /* start  pipilika slider */
         @media only screen and (max-width:768px) {
             .notice-title-area {
                 display: block;
@@ -556,7 +577,7 @@
                         </div>
                     </div>
                     <!-- start notice card area  -->
-                    <div class="notice_card_area">
+                    <div class="notice_card_area col-md-12">
                 <?php
                     $the_query = new WP_Query(
                         array( 

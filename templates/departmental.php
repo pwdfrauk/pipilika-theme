@@ -113,7 +113,6 @@
       /*  box-shadow: 0 5px 11px 0px rgb(69 90 100 / 30%);*/
       /* box-shadow: 0px 0px 1px 1px rgb(69 90 100 / 30%); */
       transition: box-shadow 0.2s ease-in-out;
-      padding: 17px;
       background-color: white;
       border-radius: 5px;
 
@@ -136,9 +135,7 @@
       padding-right: 0px;
     }
 
-    .video-thumbnail-card {
-      padding: 12px 15px 12px 15px;
-    }
+   
 
     .text-center {
       text-align: center !important;
@@ -261,52 +258,12 @@
       -moz-border-radius: 4px;
       border-radius: 4px;
       box-shadow: 0 5px 10px rgb(16 17 21 / 10%);
+      padding: 5px;
     }
 
     .video-thumbnail-img {
       width: 100%;
       height: 338px;
-    }
-
-    .video-image-overley-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .play-btn {
-      border-radius: 50%;
-      text-align: center;
-      line-height: 108px;
-      animation: animate 2s linear infinite;
-      cursor: pointer;
-      width: 96px;
-      height: 96px;
-      position: relative;
-    }
-
-    .play-btn i {
-      color: #ff4b2b;
-      font-size: 107px;
-    }
-
-    @keyframes animate {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
-      }
-
-      40% {
-        box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
-      }
-
-      80% {
-        box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 rgba(255, 193, 7, 0);
-      }
     }
 
     /*end video card */
@@ -497,9 +454,9 @@
       border-radius: 0 0 50px 50px;
     }
 
-    #TeacherProfile .serviceBox .service-icon .profile-img {
-      height: 175px;
-      width: 160px;
+    .service-icon .profile-img {
+      height: 160px;
+      width: 175px;
       border-radius: 26px;
       border: 4px solid #6861BC;
       margin: auto;
@@ -510,7 +467,6 @@
       background-size: cover !important;
       background-repeat: no-repeat !important;
       transition: .5s ease;
-
     }
     #TeacherProfile .serviceBox .service-icon .profile-img:hover{
       transform: scale(1.1);
@@ -730,7 +686,7 @@
                       <div class="service-content">
                         <h2 class="message-title">Message from Head</h2>
                         <div class="service-icon">
-                          <div class="profile-img" style="background: url('images/t3.jpeg');min-height:155px;"></div>
+                          <div class="messge-profile-img" style="background: url('images/t3.jpeg');min-height:155px;"></div>
                         </div>
                         <div class="serviece-info">
                           <div style="min-height: 108px;">
@@ -826,13 +782,13 @@
           line-height: 68px;
           height: 150px;
           width: 247px;
-          margin: -38px auto 25px;
+          margin: -58px auto 25px;
           border-radius: 0 0 50px 50px;
         }
 
-        .serviceBox .service-icon .profile-img {
-          width: 150px;
-          height: 150px;
+        .serviceBox .service-icon .messge-profile-img {
+          width: 150px !important;
+          height: 150px !important;
           margin: auto;
           border-radius: 26px;
           border: 4px solid #6861BC;
@@ -1244,6 +1200,7 @@
       }
       .notice-container {
         position: relative;
+        padding-right: 0px;
       }
       .faculty-overley {
         width: 400px;
@@ -1258,6 +1215,27 @@
         .notice_card_area {
             height: 595px;
             overflow: auto;
+        }
+        /* notice scroll bar design */
+        /* width */
+        .notice_card_area::-webkit-scrollbar {
+          width: 8px !important;
+        }
+        /* Track */
+        .notice_card_area::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px grey !important; 
+          border-radius: 10px !important;
+        }
+         
+        /* Handle */
+        .notice_card_area::-webkit-scrollbar-thumb {
+          background: #032159;
+          border-radius: 10px !important;
+        }
+
+        /* Handle on hover */
+        .notice_card_area::-webkit-scrollbar-thumb:hover {
+          background: #031d4e !important; 
         }
         /* start  pipilika slider */
           .row {
@@ -1349,6 +1327,10 @@
         .NoticeAndFacultySection{
             padding:30px 0px;
           }
+          .notice-container {
+          position: relative;
+          padding-right: 15px;
+          }
           .facultyCardSingle {
           flex-direction: column;
           align-items: center;
@@ -1435,7 +1417,7 @@
                 <div class="serviceBox " style="visibility: visible;">
                 <div class="service-content">
                   <!-- <h2 class="message-title">MESSAGE FROM VC</h2> -->
-                  <div class="service-icon">
+                  <div class="service-icon" >
                     <div class="profile-img"
                       style="background: url(<?php the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>);">
                     </div>
@@ -1576,12 +1558,25 @@
       text-decoration: none;
       outline: none;
     }
+    .departmental-leftside {
+        padding-left: 0px;
+      }
+    .departmental-rightside {
+      padding-right: 0px;
+    }
     @media only screen  and (max-width: 768px ) {
       .dep-why-choice-us-sec {
           padding: 10px 0px;
       }
       .departmental-leftside {
         margin-bottom: 25px;
+      }
+       .departmental-leftside {
+        margin-bottom: 25px;
+        padding-left: 15px;
+      }
+      .departmental-rightside {
+        padding-right: 15px;
       }
     }
   </style>
@@ -1636,18 +1631,9 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 departmental-rightside derpartmental-video-area">
-          <div class="card video-thumbnail-card">
+          <div class="video-thumbnail-card">
             <div class="video-thumbnail-img"
               style="background: url('<?php echo get_template_directory_uri();?>/images/bookmage.jpg');background-size:cover;background-position:center; background-repeat:no-repeat;">
-            </div>
-            <div class="video-image-overley-button">
-              <a style="position: absolute;" href="#">
-                <div class="video-thumbnail">
-                  <div class="play-btn">
-                    <i class="fa fa-play-circle" aria-hidden="true"><a href="#" class=""></a></i>
-                  </div>
-                </div>
-              </a>
             </div>
           </div>
         </div>

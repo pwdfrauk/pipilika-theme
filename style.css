@@ -6,7 +6,27 @@ Author URI: faruk.com;
 Description: University Theme;
 Text Domain: pipilika ;
 */
+/* width */
+    ::-webkit-scrollbar {
+      width: 10px !important;
+    }
 
+/* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey !important; 
+      border-radius: 10px !important;
+    }
+ 
+/* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #032159;
+      border-radius: 10px !important;
+    }
+
+/* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #031d4e; !important; 
+    }
 
  * {
       margin:0;

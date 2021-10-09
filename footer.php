@@ -607,7 +607,7 @@
         var slickopts = {
         slidesToShow: 2,
         slidesToScroll: 1,
-         autoplay: true,
+         autoplay: false,
         dots: true,
         rows: 2, // Removes the linear order. Would expect card 5 to be on next row, not stacked in groups.
         
