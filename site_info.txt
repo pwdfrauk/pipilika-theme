@@ -1,0 +1,10 @@
+Database info
+------------------------------------
+database name: bust 
+username: root
+user password: blank
+
+Wordpress dashboard login info
+----------------------------------------------
+username: admin
+password: 2020
