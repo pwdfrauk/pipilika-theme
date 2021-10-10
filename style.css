@@ -19,13 +19,13 @@ Text Domain: pipilika ;
  
 /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: #032159;
+      background: #6861BC;
       border-radius: 10px !important;
     }
 
 /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-      background: #031d4e; !important; 
+      background:#6861BC !important; 
     }
 
  * {
@@ -319,8 +319,8 @@ text-decoration:none;
     font-family: 'Ultra', sans-serif;
     font-size: 36px;
     line-height: 42px;
-    text-transform: uppercase;
-    text-shadow: 0 2px white, 0 3px #777;
+    text-transform: capitalize !important;
+    text-shadow: 0 2px white, 0 3px #777 !important;
 }
   
      @media only screen and (max-width:1024px)  {

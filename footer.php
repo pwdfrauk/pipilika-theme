@@ -606,21 +606,28 @@
     $(document).ready(function() {
         var slickopts = {
         slidesToShow: 2,
-        slidesToScroll: 1,
-         autoplay: false,
+        slidesToScroll:2,
+        autoplaySpeed: 2000,
+        autoplay: false,
         dots: true,
         rows: 2, // Removes the linear order. Would expect card 5 to be on next row, not stacked in groups.
         
         responsive: [
           { breakpoint: 992,
             settings: {
-              slidesToShow: 1
+              slidesToShow: 2
             }
           },
-          { breakpoint: 776,
+          { breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              rows: 1 // This doesn't appear to work in responsive (Mac/Chrome)
+            }
+          },
+          { breakpoint: 576,
             settings: {
               slidesToShow: 1,
-              rows: 1 // This doesn't appear to work in responsive (Mac/Chrome)
+              rows: 2 // This doesn't appear to work in responsive (Mac/Chrome)
             }
           }]
       };

@@ -541,8 +541,11 @@
   margin-right: 5px;
   transform: scale(0.9);
 }
+.svg-wrapper svg {
+  position: relative;
+}
 
-#shape {
+.shape {
   stroke-width: 6px;
   fill: transparent;
   stroke: #009FFD;
@@ -552,24 +555,29 @@
 }
 
 
-#text {
-  margin-top: -35px;
+.text {
   text-align: center;
 }
 
-#text a {
+.text  a {
   color: #6861BC;
   text-decoration: none;
   font-weight: 100;
   font-size: 1.1em;
   transition: 1.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  width: 100px;
 }
-#text a:hover{
+.text  a:hover{
   color: #06D6A0;
 }
 
 
-.svg-wrapper:hover #shape {
+.svg-wrapper:hover .shape {
   stroke-dasharray: 50 0;
   stroke-width: 3px;
   stroke-dashoffset: 0;
@@ -711,10 +719,10 @@
                               Army University <br>of Science and Technology (BAUST)
                           </div>
                           <div class="svg-wrapper">
-                            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                              <rect id="shape" height="40" width="150" />
-                              <div id="text">
-                                <a href=""><span class="spot"></span> <i class="fa fa-eye"></i> <b> Read more </b></a>
+                            <svg height="40" width="150">
+                              <rect class="shape" height="40" width="150" />
+                              <div class="text">
+                                <a href=""><i class="fa fa-eye"></i> <b> Read more </b></a>
                               </div>
                             </svg>
                           </div>
@@ -778,6 +786,7 @@
           text-align: center;
           border-radius: 0 0 150px 150px;
           box-shadow: 0 12px 7px -7px rgb(0 0 0 / 20%);
+          margin-bottom: 10px;
         }
 
         .serviceBox .service-content {
@@ -1247,13 +1256,13 @@
          
         /* Handle */
         .notice_card_area::-webkit-scrollbar-thumb {
-          background: #032159;
+          background: #6861BC;
           border-radius: 10px !important;
         }
 
         /* Handle on hover */
         .notice_card_area::-webkit-scrollbar-thumb:hover {
-          background: #031d4e !important; 
+          background: #6861BC !important; 
         }
         /* start  pipilika slider */
           .row {
@@ -1282,6 +1291,28 @@
             bottom:20px;
             margin-top: 20px;
             padding:0px 6px;
+            border:none;
+            font-size: 14px;
+            font-weight: 600;
+            background: transparent;
+          }
+          .pipilika-carousel .slick-prev::after {
+            content: '';
+            width: 60%;
+            height:3px;
+            display: table;
+            background: #6861BC;
+            border: none;
+            transition:width 0.5s;
+            border-radius: 10px;
+            margin-top:4px;
+          }
+          .pipilika-carousel .slick-prev:hover {
+            color: #6861BC;
+          }
+          .pipilika-carousel .slick-prev:hover::after {
+            background: red;
+            width: 100%;
           }
           .pipilika-carousel .slick-next {
              position: absolute;
@@ -1289,8 +1320,32 @@
             bottom:20px;
             margin-top: 20px;
             padding:0px 6px;
+            border:none;
+            font-size: 14px;
+            font-weight: 600;
+            background: transparent;
           }
-           .pipilika-carousel .slick-dots {
+          .pipilika-carousel .slick-next::after {
+            content: '';
+            width: 60%;
+            height:3px;
+            display: table;
+            background:#6861BC;
+            border: none;
+            transition:width 0.5s;
+            border-radius: 10px;
+            margin-top:4px;
+            margin-left: auto;
+
+          }
+          .pipilika-carousel .slick-next:hover {
+            color: #6861BC;
+          }
+          .pipilika-carousel .slick-next:hover::after {
+            background: red;
+            width: 100%;
+          }
+          .pipilika-carousel .slick-dots {
             list-style: none;
             display: flex;
             justify-content: center;
@@ -1299,11 +1354,14 @@
            .pipilika-carousel .slick-dots li {
               margin-right: 8px;
            }
-           .pipilika-carousel .slick-dots li button {
+            .pipilika-carousel .slick-dots li button {
             padding:0px 6px;
+            background: transparent;
+            color:#6861BC;
+            border:1px solid #ddd;
            }
            .pipilika-carousel .slick-dots li.slick-active button {
-
+             border:1px solid #6861BC;
            } 
            .pipilika-carousel .slick-dots li:last-child {
             margin-right: 0px;
@@ -1410,13 +1468,13 @@
       </style>
   <div class="msg-single-page" style="background:url('<?php echo get_template_directory_uri();?>../images/bbgg.jpg'); background-repeat: no-repeat;background-size: cover;background-position: center;">
     <div class="container">
-      <h2 class="section-title headerTitles">FACULTY OF BUSINESS STUDIES (BS)</h2>
+      <h2 class="section-title HeadingTitleAll">FACULTY OF BUSINESS STUDIES (BS)</h2>
       <!-- profile card slider  -->
     <!-- slider Section  owl carousel -->
       <div class="owlAndNoticeSection">
         <div class="row">
         <div class="col-md-7">
-          <div class="our-client-section">
+          <div class="our-client-section col-md-12">
             <div class="profileTitleDiv">
               <h3 class="TitleCOlor ">Profile Card Slider</h3>
               <hr class="Profiledivider">
@@ -1426,7 +1484,6 @@
               $the_query = new WP_Query(
                         array( 
                             'category_name' => 'Teacher List',
-                            'order'          => 'ASC',
                         )
                     );
                     if ( $the_query->have_posts() ):
@@ -1454,15 +1511,13 @@
                       </div>
                     </div>
                     <div class="svg-wrapper">
-                      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                          <!-- <a href=""><span class="spot"></span> <i class="fa fa-eye"></i> <b>Read More </b></a> -->
-                          <a style="position:bottom" href="#" class="read-more service-box-read-more-button"><span class="spot"></span> <i class="fa fa-eye"></i> View Profile</a>
+                      <svg height="40" width="150">
+                        <rect class="shape" height="40" width="150" />
+                          <div class="text">
+                            <a style="position:bottom" href="#" class="read-more service-box-read-more-button"><span class="spot"></span> <i class="fa fa-eye"></i> View Profile</a>
                         </div>
                       </svg>
                     </div>
-                    
                   </div>
                 </div>
               </div>
@@ -1576,9 +1631,6 @@
       text-decoration: none;
       outline: none;
     }
-    .departmental-leftside {
-        padding-left: 0px;
-      }
     .departmental-rightside {
       padding-right: 0px;
     }
@@ -1588,10 +1640,6 @@
       }
       .departmental-leftside {
         margin-bottom: 25px;
-      }
-       .departmental-leftside {
-        margin-bottom: 25px;
-        padding-left: 15px;
       }
       .departmental-rightside {
         padding-right: 15px;
@@ -1657,4 +1705,5 @@
         </div>
       </div>
   </div>
+
  <?php get_footer(); ?>
